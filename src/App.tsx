@@ -27,6 +27,47 @@ const App = () => {
     return () => clearInterval(timer);
   }, [playing, timeElapsed]);
 
+  useEffect(() => {
+    if (showCount === 2) {
+      let opened = gridItems.filter((item) => item.shown === true);
+      if (opened.length === 2) {
+        if (opened[0].item === opened[1].item) {
+          let tmpGrid = [...gridItems];
+          for (let i in tmpGrid) {
+            if (tmpGrid[i].shown) {
+              tmpGrid[i].permanentShown = true;
+              tmpGrid[i].shown = false;
+            }
+          }
+          setGridItems(tmpGrid);
+          setShowCount(0);
+        } else {
+          setTimeout(() => {
+            let tmpGrid = [...gridItems];
+            for (let i in tmpGrid) {
+              if (tmpGrid[i].shown) {
+                tmpGrid[i].shown = false;
+              }
+            }
+            setGridItems(tmpGrid);
+            setShowCount(0);
+          }, 1000);
+        }
+
+        setMoveCount((moveCount) => moveCount + 1);
+      }
+    }
+  }, [showCount, gridItems]);
+
+  useEffect(() => {
+    if (
+      moveCount > 6 &&
+      gridItems.every((item) => item.permanentShown === true)
+    ) {
+      setPlaying(false);
+    }
+  }, [moveCount, gridItems]);
+
   const resetAndCreateGrid = () => {
     // 1º - Resetar o jogo
     setTimeElapsed(0);
@@ -34,9 +75,9 @@ const App = () => {
     setShowCount(0);
 
     // 2º - Criar o grid
-    let tmpGrip: GridItemType[] = [];
+    let tmpGrid: GridItemType[] = [];
     for (let i = 0; i < items.length * 2; i++) {
-      tmpGrip.push({
+      tmpGrid.push({
         item: null,
         shown: false,
         permanentShown: false,
@@ -46,14 +87,14 @@ const App = () => {
     for (let w = 0; w < 2; w++) {
       for (let i = 0; i < items.length; i++) {
         let pos = -1;
-        while (pos < 0 || tmpGrip[pos].item !== null) {
+        while (pos < 0 || tmpGrid[pos].item !== null) {
           pos = Math.floor(Math.random() * (items.length * 2));
         }
-        tmpGrip[pos].item = i;
+        tmpGrid[pos].item = i;
       }
     }
 
-    setGridItems(tmpGrip);
+    setGridItems(tmpGrid);
 
     // 3º - Começar o jogo
     setPlaying(true);
@@ -61,15 +102,15 @@ const App = () => {
 
   const handleItemClick = (index: number) => {
     if (playing && index !== null && showCount < 2) {
-      let tmpGrip = [...gridItems];
+      let tmpGrid = [...gridItems];
       if (
-        tmpGrip[index].permanentShown === false &&
-        tmpGrip[index].shown === false
+        tmpGrid[index].permanentShown === false &&
+        tmpGrid[index].shown === false
       ) {
-        tmpGrip[index].shown = true;
+        tmpGrid[index].shown = true;
         setShowCount(showCount + 1);
       }
-      setGridItems(tmpGrip);
+      setGridItems(tmpGrid);
     }
   };
 
@@ -81,7 +122,7 @@ const App = () => {
         </C.LogoLink>
         <C.InfoArea>
           <InfoItem label='Tempo' value={formatTimeElapsed(timeElapsed)} />
-          <InfoItem label='Movimentos' value='0' />
+          <InfoItem label='Movimentos' value={moveCount.toString()} />
         </C.InfoArea>
         <Button
           label='Reiniciar'
