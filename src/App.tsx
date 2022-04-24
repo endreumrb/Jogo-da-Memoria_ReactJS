@@ -1,4 +1,5 @@
 import * as C from './App.styles';
+import { InfoItem } from './components/InfoItem/index';
 import logoImage from './assets/devmemory_logo.png';
 
 const App = () => {
@@ -8,7 +9,10 @@ const App = () => {
         <C.LogoLink href=''>
           <img src={logoImage} width='200' alt='' />
         </C.LogoLink>
-        <C.InfoArea>...</C.InfoArea>
+        <C.InfoArea>
+          <InfoItem label='Tempo' value='00:00' />
+          <InfoItem label='Movimentos' value='0' />
+        </C.InfoArea>
         <button type='button'>Reiniciar</button>
       </C.Info>
       <C.GridArea></C.GridArea>
