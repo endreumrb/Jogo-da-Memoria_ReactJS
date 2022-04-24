@@ -1,16 +1,12 @@
 import { useEffect, useState } from 'react';
-
 import * as C from './App.styles';
-
 import logoImage from './assets/devmemory_logo.png';
 import RestartIcon from './svgs/restart.svg';
-
 import { InfoItem } from './components/InfoItem/index';
 import { Button } from './components/Button';
 import { GridItem } from './components/gridItem';
-
 import { GridItemType } from './types/GridItemType';
-
+import { formatTimeElapsed } from './helpers/formatTimeElapsed';
 import { items } from './data/items';
 
 const App = () => {
@@ -21,6 +17,15 @@ const App = () => {
   const [gridItems, setGridItems] = useState<GridItemType[]>([]);
 
   useEffect(() => resetAndCreateGrid(), []);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      if (playing) {
+        setTimeElapsed(timeElapsed + 1);
+      }
+    }, 1000);
+    return () => clearInterval(timer);
+  }, [playing, timeElapsed]);
 
   const resetAndCreateGrid = () => {
     // 1º - Resetar o jogo
@@ -63,7 +68,7 @@ const App = () => {
           <img src={logoImage} width='200' alt='' />
         </C.LogoLink>
         <C.InfoArea>
-          <InfoItem label='Tempo' value='00:00' />
+          <InfoItem label='Tempo' value={formatTimeElapsed(timeElapsed)} />
           <InfoItem label='Movimentos' value='0' />
         </C.InfoArea>
         <Button
