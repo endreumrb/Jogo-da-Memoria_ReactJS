@@ -1,46 +1,95 @@
-# Getting Started with Create React App
+<h1 align="center">Jogo da Memória</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p align="center">Que tal relembrar a infância com o clássico jogo da memória?</p>
 
-## Available Scripts
+<p align="center"><i>“Educação não é o quanto você tem guardado na memória, nem mesmo o quanto você sabe. É ser capaz de diferenciar entre o que você sabe e o que você não sabe.” — Anatole France</i></p>
 
-In the project directory, you can run:
+<p align="center">
+ <a href="#blush-objetivo">Objetivo</a> •
+ <a href="#star-instalação">Instalação</a> •
+ <a href="#zap-tecnologias">Tecnologias</a> • 
+ <a href="#handshake-contribuição">Contribuição</a> • 
+ <a href="#sunglasses-autor">Autor</a>
+</p>
 
-### `npm start`
+<p align="center">
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/progress-100%25-brightgreen.svg" alt="PRs Welcome">
+  </a>
+  <a href="http://makeapullrequest.com">
+    <img src="https://img.shields.io/badge/contribuition-welcome-brightgreen.svg" alt="PRs Welcome">
+  </a>
+</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+<h4 align="center"> 
+	🚧  Calculadora de IMC 🚀 Finalizado!  🚧
+</h4>
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+<p align="center">
+  <kbd>
+    <img width="400" style="padding-right: 5px; border-radius: 5px" src="https://github.com/endreumrb/Jogo-da-Memoria_ReactJS/blob/main/src/assets/projeto.png" alt="Projeto">
+</p>
 
-### `npm test`
+## :blush: **Objetivo**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+A ideia inicial deste projeto foi praticar e aprimorar meus conhecimentos na linguagem de programação TypeScript e bibliotecas ReactJS e Styled Components.
 
-### `npm run build`
+Sendo desenvolvido durante o curso [B7Web](https://b7web.com.br).
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## :star: **Instalação**
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Para conseguir executar o projeto, siga estas etapas:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1° Etapa - Clonar Projeto
 
-### `npm run eject`
+```
+git clone https://github.com/endreumrb/Jogo-da-Memoria_ReactJS.git
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+2° Etapa - Acessar a pasta do projeto
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+cd Jogo-da-Memoria_ReactJS
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+3° Etapa - Instalar dependências
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```
+npm install
+```
 
-## Learn More
+4° Etapa - Executar o projeto
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+npm start
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## :zap: **Tecnologias**
+
+- [TypeScript](https://www.typescriptlang.org/)
+- [ReactJS](https://reactjs.org/)
+- [Styled Components](https://styled-components.com/)
+
+Entre outras tecnologias...
+
+## :handshake: **Contribuição**
+
+Este projeto é para fins de estudo também, então me mande um e-mail me contando o que você está fazendo e por que está fazendo, me ensine o que você sabe.
+
+Todos os tipos de contribuições são muito bem-vindos e apreciadas!
+
+## :sunglasses: **Autor**
+
+<a href="https://www.linkedin.com/in/endreu-benites/">
+ <img style="border-radius: 50px" src="https://media-exp1.licdn.com/dms/image/C4D03AQH5JiW6ui9c1A/profile-displayphoto-shrink_800_800/0/1627451596888?e=1634169600&v=beta&t=J_B8jXpqCBn9ygve-1tQRiS48LYJbGvV-BRAUlDjdL4" width="100px;" alt=""/>
+ <br />
+ <sub><b>Endreu Benites</b></sub></a> <a href="https://www.linkedin.com/in/endreu-benites/" title="Linkedin">🚀
+ <br /><br />
+</a>
+
+Feito com ❤️ por Endreu Benites 👋🏽 Entre em contato!
+
+<br />
+
+[![Github Badge](https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white&link=https://github.com/endreumrb)](https://github.com/endreumrb)
+[![Linkedin Badge](https://img.shields.io/badge/-LinkedIn-blue?style=flat-square&logo=Linkedin&logoColor=white&link=https://www.linkedin.com/in/endreu-benites/)](https://www.linkedin.com/in/endreu-benites/)
