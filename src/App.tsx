@@ -59,7 +59,19 @@ const App = () => {
     setPlaying(true);
   };
 
-  const handleItemClick = (index: number) => {};
+  const handleItemClick = (index: number) => {
+    if (playing && index !== null && showCount < 2) {
+      let tmpGrip = [...gridItems];
+      if (
+        tmpGrip[index].permanentShown === false &&
+        tmpGrip[index].shown === false
+      ) {
+        tmpGrip[index].shown = true;
+        setShowCount(showCount + 1);
+      }
+      setGridItems(tmpGrip);
+    }
+  };
 
   return (
     <C.Container>
