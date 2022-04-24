@@ -22,7 +22,7 @@
 </p>
 
 <h4 align="center"> 
-	🚧  Calculadora de IMC 🚀 Finalizado!  🚧
+	🚧  Jogo da Memória 🚀 Finalizado!  🚧
 </h4>
 
 <p align="center">
